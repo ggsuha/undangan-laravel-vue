@@ -88,17 +88,9 @@ function musicHandler() {
     if (player.muted) {
         player.muted = false;
         document.getElementById("player-control").classList.add("on");
-        let src = document.getElementById("button-image").getAttribute("src");
-        document
-            .getElementById("button-image")
-            .setAttribute("src", src.replace("note-off", "note-on"));
     } else {
         player.muted = true;
         document.getElementById("player-control").classList.remove("on");
-        let src = document.getElementById("button-image").getAttribute("src");
-        document
-            .getElementById("button-image")
-            .setAttribute("src", src.replace("note-on", "note-off"));
     }
 }
 </script>
@@ -413,8 +405,6 @@ function musicHandler() {
     </div>
     <div class="play-pause btn-play-pause" id="player-control" @click="musicHandler" data-aos="fade-up"
         data-aos-duration="1000" data-aos-delay="2000">
-        <img width="15px" height="15px" id="button-image" class="buttonImage" src="/assets/fonts/note-off.svg"
-            alt="play pause" />
     </div>
 </template>
 
