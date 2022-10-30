@@ -196,7 +196,7 @@ function musicHandler() {
                         <h3 class="caption text-secondary mb-4">Resepsi</h3>
                         <p class="font-weight-bold">
                             {{ day }} <br />
-                            15:00 - Selesai
+                            Bebas
                         </p>
                         <p>
                             Rumah Bapak Sanali <br />
