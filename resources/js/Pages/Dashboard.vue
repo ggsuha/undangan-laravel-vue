@@ -98,13 +98,13 @@ function musicHandler() {
 <template>
 
     <Head>
-        <title>Akbar & Dwi Wedding</title>
-        <meta name="title" content="Akbar & Dwi Wedding" />
+        <title>Undangan Pernikahan Akbar & Dwi</title>
+        <meta name="title" content="Undangan Pernikahan Akbar & Dwi" />
         <meta name="language" content="Indonesia" />
-        <meta name="description" :content="`Akbar & Dwi akan menikah pada ${day}.`" />
+        <meta name="description" :content="`Resepsi diselenggarakan pada ${day}.`" />
         <meta property="og:url" :content="url" />
-        <meta property="og:title" content="Akbar & Dwi Wedding" />
-        <meta property="og:description" :content="`Akbar & Dwi akan menikah pada ${day}.`" />
+        <meta property="og:title" content="Undangan Pernikahan Akbar & Dwi" />
+        <meta property="og:description" :content="`Resepsi diselenggarakan pada ${day}.`" />
     </Head>
 
     <section class="full header">
@@ -193,7 +193,7 @@ function musicHandler() {
                 </div>
                 <div class="col-md-4 mt-4 information-wrap" data-aos="fade-up" data-aos-delay="400">
                     <div class="information">
-                        <h3 class="caption text-secondary mb-4">Ngunduh Mantu</h3>
+                        <h3 class="caption text-secondary mb-4">Resepsi (Unduh Mantu)</h3>
                         <p class="font-weight-bold">
                             {{ day }} <br />
                             Jam Bebas
