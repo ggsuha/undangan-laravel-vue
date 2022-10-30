@@ -7,8 +7,9 @@
     <meta name="robots" content="noindex">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
-    <meta property="og:image" content="{{ asset('assets/images/image.jpg') }}">
+    <meta property="og:image" itemprop="image" content="{{ asset('assets/images/image.jpg') }}">
     <meta property="og:image:alt" content="Akbar & Dwi Wedding Image">
+    <meta property="og:description" :content="`Akbar & Dwi akan menikah pada Minggu, 08 Januari 2023.`" />
 
     <title>Akbar & Dwi Wedding</title>
 
