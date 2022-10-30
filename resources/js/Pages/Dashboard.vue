@@ -182,7 +182,7 @@ function musicHandler() {
                         <h3 class="caption text-secondary mb-4">Akad Nikah</h3>
                         <p class="font-weight-bold">
                             Jumat, 06 Januari 2023 <br />
-                            10:00 - Selesai
+                            08:00 - Selesai
                         </p>
                         <p>
                             Rumah Mempelai Wanita <br />
@@ -193,10 +193,10 @@ function musicHandler() {
                 </div>
                 <div class="col-md-4 mt-4 information-wrap" data-aos="fade-up" data-aos-delay="400">
                     <div class="information">
-                        <h3 class="caption text-secondary mb-4">Resepsi</h3>
+                        <h3 class="caption text-secondary mb-4">Ngunduh Mantu</h3>
                         <p class="font-weight-bold">
                             {{ day }} <br />
-                            Bebas
+                            Jam Bebas
                         </p>
                         <p>
                             Rumah Bapak Sanali <br />
