@@ -42,3 +42,7 @@ Route::get('/message', function (Request $request) {
 
     return MessageResource::collection($messages);
 });
+
+Route::fallback(function () {
+    return redirect()->route('home');
+});
