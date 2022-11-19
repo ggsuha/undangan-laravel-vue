@@ -11,23 +11,23 @@ const props = defineProps({
         type: String,
         default: 'Minggu, 08 Januari 2023',
     },
-    to: String,
     url: String,
     errors: Object,
+    guest: Object,
 });
 
 AOS.init();
 
 const form = useForm({
-    name: props.to,
+    name: props.guest?.name,
     message: null,
     confirm: "hadir",
 });
 
 const messages = reactive({
     data: [],
-    page: 1,
-    last_page: 2,
+    page: 0,
+    last_page: 1,
 });
 
 onMounted(() => {
@@ -54,11 +54,11 @@ var countDownDate = new Date("08 January 2023 09:00:00").getTime(),
 
 function getMessages(reset = false) {
     if (reset) {
-        messages.page = 1;
-        messages.last_page = 2;
+        messages.page = 0;
+        messages.last_page = 1;
     }
 
-    axios.get("/message?page=" + messages.page).then(function (response) {
+    axios.get("/message?page=" + (messages.page + 1)).then(function (response) {
         messages.last_page = response.data.meta.last_page;
         messages.page += 1;
         messages.data = reset
@@ -119,10 +119,10 @@ function musicHandler() {
                     {{ day }}
                 </h4>
             </div>
-            <div class="col-md-12 mt-4" data-aos="fade-up" data-aos-duration="3000">
+            <div v-if="guest" class="col-md-12 mt-4" data-aos="fade-up" data-aos-duration="3000">
                 <i>Kepada Yth<br />Bapak/Ibu/Saudara/i</i>
-                <h4 class="mt-1">{{ to }}</h4>
-                di Tempat
+                <h4 class="mt-1">{{ guest.name }}</h4>
+                {{ guest.place }}
             </div>
         </div>
         <div class="header-footer"></div>
@@ -132,11 +132,11 @@ function musicHandler() {
         <div class="container" data-aos="flip-up" data-aos-duration="500" data-aos-delay="200">
             <div class="col-md-12 pt-4 boning">
                 <p>
-                    <span>"</span>Tidak ada solusi yang lebih baik bagi dua
-                    insan yang saling mencintai dibanding pernikahan.<span>"</span>
+                    <span>"</span>Dan segala sesuatu Kami ciptakan berpasang-pasangan agar kamu mengingat (kebesaran
+                    Allah).<span>"</span>
                 </p>
                 <h4 class="caption text-secondary" style="text-transform: inherit">
-                    HR. Ibnu Majah
+                    QS. Az Zariyat: 49
                 </h4>
             </div>
         </div>
@@ -321,7 +321,7 @@ function musicHandler() {
                 <h2 class="text-secondary">Buku Tamu</h2>
             </div>
         </div>
-        <div class="container">
+        <div v-if="guest" class="container">
             <div class="col-md-12 text-left">
                 <div class="form-group" data-aos="fade-down" data-aos-duration="300">
                     <label for="guestName">Nama</label>
@@ -332,8 +332,8 @@ function musicHandler() {
                     <label for="attendance">Kedatangan</label>
                     <select class="form-control" id="attendance" v-model="form.confirm">
                         <option value="hadir">Hadir</option>
-
                         <option value="tidak">Tidak Hadir</option>
+                        <option value="ragu">Belum Pasti</option>
                     </select>
                 </div>
                 <div class="form-group" data-aos="fade-down" data-aos-duration="500">
@@ -360,8 +360,11 @@ function musicHandler() {
                                 alt="Image Avatar" />
                             <div class="media-body">
                                 <div class="mb-2">
-                                    <h5 class="h6 mb-0 text-secondary">
+                                    <h5 class="h6 mb-0 text-secondary"
+                                        style="display: flex; justify-content: space-between; width: 100%;">
                                         {{ message.name }}
+                                        <small :class="`status ${message.confirm}`"
+                                            style="align-self: flex-end;"></small>
                                     </h5>
                                     <small class="text-muted">{{
                                             message.created_at
@@ -387,7 +390,7 @@ function musicHandler() {
     <footer class="py-4">
         <div class="container">
             <div class="col-md-12">
-                <small>Created with Love</small>
+                <!-- <small>Created with ❤️</small> -->
             </div>
         </div>
     </footer>

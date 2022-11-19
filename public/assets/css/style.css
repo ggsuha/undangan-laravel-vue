@@ -406,12 +406,49 @@ footer::before {
 footer::after {
     bottom: 20px;
     right: 20px;
-    background: url("../images/right-bottom-border.png") no-repeat;
+    /* background: url("../images/right-bottom-border.png") no-repeat; */
     background-size: contain;
     background-position: bottom right;
 }
 footer .col-md-12 {
     z-index: 3;
+}
+
+.status {
+    text-transform: capitalize;
+    border-radius: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    margin-left: 5px;
+}
+
+.status.hadir {
+    color: #45a223;
+    background-color: #e5f0e1;
+}
+
+.status.hadir::after {
+    content: "Hadir";
+}
+
+.status.tidak {
+    color: #9e8525;
+    background-color: #f0eee1;
+}
+
+.status.tidak::after {
+    content: "Tidak Hadir";
+}
+
+.status.ragu {
+    color: #7d43bf;
+    background-color: #ece1f0;
+}
+
+.status.ragu::after {
+    content: "Belum Pasti";
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {

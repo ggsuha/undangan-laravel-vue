@@ -2,10 +2,10 @@
 
 use App\Http\Requests\StoreMessage;
 use App\Http\Resources\MessageResource;
+use App\Models\Guest;
 use App\Models\Message;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Illuminate\Support\Str;
@@ -21,6 +21,31 @@ use Illuminate\Support\Str;
 |
 */
 
+Route::get('/generate', function (Request $request) {
+    $guests = Guest::latest()->get();
+    $url = config('app.url');
+
+    return Inertia::render('Generate', compact('guests', 'url'));
+});
+
+Route::post('/generate', function (Request $request) {
+    Guest::create($request->input());
+
+    return redirect()->back();
+});
+
+Route::patch('/generate/{guest}', function (Guest $guest, Request $request) {
+    $guest->update($request->input());
+
+    return redirect()->back();
+});
+
+Route::delete('/generate/{guest}', function (Guest $guest, Request $request) {
+    $guest->delete();
+
+    return redirect()->back();
+});
+
 Route::get('/', function (Request $request) {
     $date = Carbon::create(2023, 1, 8);
     $day = $date->translatedFormat('l, d F Y');
@@ -31,16 +56,35 @@ Route::get('/', function (Request $request) {
     return Inertia::render('Dashboard', compact('day', 'to', 'url'));
 })->name('home');
 
-Route::post('/message', function (StoreMessage $request) {
-    Message::create($request->only(['name', 'message', 'confirm']));
-
-    return Redirect::route('home');
-});
-
 Route::get('/message', function (Request $request) {
+    if (!$request->expectsJson()) {
+        return redirect()->route('home');
+    }
+
     $messages = Message::orderByDesc('id')->paginate(10);
 
     return MessageResource::collection($messages);
+});
+
+Route::get('/{slug}', function ($slug, Request $request) {
+    $guest = Guest::whereSlug($slug)->first();
+
+    if (!$guest) {
+        return redirect()->route('home');
+    }
+
+    $date = Carbon::create(2023, 1, 8);
+    $day = $date->translatedFormat('l, d F Y');
+
+    $url = config('app.url');
+
+    return Inertia::render('Dashboard', compact('day', 'guest', 'url'));
+});
+
+Route::post('/message', function (StoreMessage $request) {
+    Message::create($request->only(['name', 'message', 'confirm']));
+
+    return redirect()->back();
 });
 
 Route::fallback(function () {
