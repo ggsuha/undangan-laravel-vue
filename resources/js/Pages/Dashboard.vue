@@ -325,7 +325,8 @@ function musicHandler() {
             <div class="col-md-12 text-left">
                 <div class="form-group" data-aos="fade-down" data-aos-duration="300">
                     <label for="guestName">Nama</label>
-                    <input type="text" class="form-control" id="guestName" v-model="form.name" autocomplete="off" />
+                    <input type="text" class="form-control" id="guestName" v-model="form.name" autocomplete="off"
+                        disabled />
                     <InputError :message="errors.name" />
                 </div>
                 <div class="form-group" data-aos="fade-down" data-aos-duration="400">
