@@ -49,11 +49,9 @@ Route::delete('/generate/{guest}', function (Guest $guest, Request $request) {
 Route::get('/', function (Request $request) {
     $date = Carbon::create(2023, 1, 8);
     $day = $date->translatedFormat('l, d F Y');
-
-    $to = Str::title($request->query('to', 'undangan'));
     $url = config('app.url');
 
-    return Inertia::render('Dashboard', compact('day', 'to', 'url'));
+    return Inertia::render('Dashboard', compact('day', 'url'));
 })->name('home');
 
 Route::get('/message', function (Request $request) {
