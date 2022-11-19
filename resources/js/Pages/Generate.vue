@@ -83,10 +83,13 @@ Wassalamu'alaikum Warahmatullahi Wabarakatuh.
   `;
 
     // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText);
+    navigator.clipboard.writeText(copyText).then(() => {
+        // Alert the copied text
+        alert(`Undangan untuk ${guest.name} berhasil dicopy!`);
+    }, () => {
+        alert(`Undangan untuk ${guest.name} gagal dicopy!`);
+    });
 
-    // Alert the copied text
-    alert(`Undangan untuk ${guest.name} berhasil dicopy!`);
 }
 
 </script>
