@@ -70,7 +70,7 @@ _Assalamu'alaikum Warahmatullahi Wabarakaatuh_
 
 Tanpa mengurangi rasa hormat, izinkan kami mengundang Bapak/Ibu/Saudara/i *${guest.name}* untuk hadir serta memberikan do'a restu pada acara pernikahan kami.
 
-Untuk detail acara, lokasi, dan ucapan bisa klik link dibawah ini:
+Untuk detail acara, lokasi, dan ucapan bisa klik link di bawah ini:
 ${props.url}/${guest.slug}
 
 Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/i *${guest.name}* berkenan hadir.
@@ -78,6 +78,12 @@ Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila Bapak/Ibu/Saudara/
 Do'a restu Anda merupakan hadiah terindah bagi kami.
 
 Atas kehadiran dan do'a restu yang telah diberikan, kami ucapkan terima kasih.
+
+Dengan disertai permohonan maaf dari kami atas kekurangan kami dalam mengundang karena keterbatasan jarak dan waktu.
+
+Yang berbahagia,
+
+*AKBAR & DWI*
 
 Wassalamu'alaikum Warahmatullahi Wabarakatuh.
   `;
