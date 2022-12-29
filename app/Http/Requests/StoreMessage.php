@@ -25,7 +25,7 @@ class StoreMessage extends FormRequest
     {
         return [
             'name' => ['required', 'max:50'],
-            'message' => ['required', 'max:100'],
+            'message' => ['required', 'max:200'],
         ];
     }
 }
