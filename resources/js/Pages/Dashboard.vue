@@ -182,7 +182,7 @@ function musicHandler() {
                         <h3 class="caption text-secondary mb-4">Akad Nikah</h3>
                         <p class="font-weight-bold">
                             Jumat, 06 Januari 2023 <br />
-                            08:00 - Selesai
+                            09:00 - Selesai
                         </p>
                         <p>
                             Rumah Mempelai Wanita <br />
@@ -225,60 +225,6 @@ function musicHandler() {
                 <a target="_blank"
                     href="https://www.google.com/maps/dir/?api=1&destination=-7.597273767251446, 112.48785635454182&zoom=20&dir_action=navigate"
                     class="btn btn-primary mt-3">Open Google Map</a>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="container" data-aos="fade-up">
-            <div class="col-md-12">
-                <h2>Informasi</h2>
-            </div>
-            <div class="col-md-12 pt-4">
-                <div style="max-width: 500px; margin: auto">
-                    <div style="
-                            font-weight: bold;
-                            border-bottom: solid 1px #000;
-                            display: inline-block;
-                            margin-bottom: 10px;
-                            font-size: 1.1rem;
-                        ">
-                        Protokol Covid-19
-                    </div>
-                    <br />
-                    <p>
-                        Dalam upaya mengurangi penyebaran Covid 19 pada masa
-                        pandemi, kami harapkan kedatangan para tamu undangan
-                        agar menjalankan protokol yang berlaku.
-                    </p>
-                    <table style="font-size: 0.9rem; margin: auto">
-                        <tbody>
-                            <tr>
-                                <td width="50%">
-                                    <img src="/assets/images/masker.png" alt="masker" style="max-width: 80px" /><br />
-                                    Wajib Menggunakan Masker
-                                </td>
-                                <td width="50%">
-                                    <img src="/assets/images/distance.png" alt="distance"
-                                        style="max-width: 80px" /><br />
-                                    Saling Menjaga Jarak di Dalam Acara
-                                </td>
-                            </tr>
-                            <tr>
-                                <td width="50%">
-                                    <img src="/assets/images/salam.png" alt="salam" style="max-width: 80px" /><br />
-                                    Menggunakan salam namastee sebagai ganti
-                                    berjabat tangan
-                                </td>
-                                <td width="50%">
-                                    <img src="/assets/images/wash.png" alt="wash" style="max-width: 80px" /><br />
-                                    Jaga Kebersihan dengan Mencuci Tangan atau
-                                    Handsanitizer
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
         </div>
     </section>
@@ -368,8 +314,8 @@ function musicHandler() {
                                             style="align-self: flex-end;"></small>
                                     </h5>
                                     <small class="text-muted">{{
-                                            message.created_at
-                                    }}</small>
+        message.created_at
+}}</small>
                                 </div>
 
                                 <p>
