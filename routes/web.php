@@ -71,12 +71,14 @@ Route::get('/{slug}', function ($slug, Request $request) {
         return redirect()->route('home');
     }
 
+    $forParent = in_array($slug, ['keluarga-karto-rebo', 'keluarga-suwondo']);
+
     $date = Carbon::create(2023, 1, 8);
     $day = $date->translatedFormat('l, d F Y');
 
     $url = config('app.url');
 
-    return Inertia::render('Dashboard', compact('day', 'guest', 'url'));
+    return Inertia::render('Dashboard', compact('day', 'guest', 'url', 'forParent'));
 });
 
 Route::post('/message', function (StoreMessage $request) {
