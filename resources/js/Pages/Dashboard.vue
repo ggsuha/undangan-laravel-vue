@@ -14,6 +14,7 @@ const props = defineProps({
     url: String,
     errors: Object,
     guest: Object,
+    forParent: Boolean,
 });
 
 AOS.init();
@@ -148,7 +149,7 @@ function musicHandler() {
                 <i>Assalamu’alaikum Warahmatullahi Wabarakatuh</i><br /><br />Tanpa mengurangi rasa hormat, perkenankan
                 kami
                 mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada
-                acara pernikahan {{ forParent? 'anak': '' }} kami:<br /><br />
+                acara pernikahan {{ forParent == true ? 'anak' : '' }} kami:<br /><br />
             </div>
             <div class="row mt-5">
                 <div data-aos="zoom-out" data-aos-delay="200" class="col-md-12 mb-3 order-1">
