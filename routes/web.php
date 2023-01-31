@@ -23,22 +23,22 @@ use Illuminate\Support\Str;
 
 Route::get('/ignored', function (Request $request) {
     $guests = Guest::latest()->get();
-    return response()->json('ignored');
+    return view('indexx');
 });
 
 Route::get('/ignored/slug', function (Request $request) {
     $guests = Guest::latest()->get();
-    return response()->json('ignored');
+    return view('indexx');
 });
 
 Route::get('/cached', function (Request $request) {
     $guests = Guest::latest()->get();
-    return response()->json('cached');
+    return view('indexx');
 });
 
 Route::get('/cached/slug', function (Request $request) {
     $guests = Guest::latest()->get();
-    return response()->json('cached');
+    return view('indexx');
 });
 
 Route::get('/generate', function (Request $request) {
