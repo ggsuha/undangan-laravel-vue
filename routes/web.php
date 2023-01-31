@@ -21,6 +21,26 @@ use Illuminate\Support\Str;
 |
 */
 
+Route::get('/ignored', function (Request $request) {
+    $guests = Guest::latest()->get();
+    return response()->json('ignored');
+});
+
+Route::get('/ignored/slug', function (Request $request) {
+    $guests = Guest::latest()->get();
+    return response()->json('ignored');
+});
+
+Route::get('/cached', function (Request $request) {
+    $guests = Guest::latest()->get();
+    return response()->json('cached');
+});
+
+Route::get('/cached/slug', function (Request $request) {
+    $guests = Guest::latest()->get();
+    return response()->json('cached');
+});
+
 Route::get('/generate', function (Request $request) {
     $guests = Guest::latest()->get();
     $url = config('app.url');
