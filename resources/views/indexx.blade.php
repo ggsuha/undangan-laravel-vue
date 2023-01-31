@@ -10,10 +10,8 @@
     <meta name="title" content="Akbar & Dwi Wedding">
     <meta name="author" content="datengdong">
     <meta name="language" content="Indonesia">
-    <meta name="description" content="Akbar & Dwi akan menikah pada {{ $day }}.">
     <meta property="og:url" content="{{ config('app.url') }}">
     <meta property="og:title" content="Akbar & Dwi Wedding">
-    <meta property="og:description" content="Akbar & Dwi akan menikah pada {{ $day }}.">
     <meta property="og:image" content="{{ asset('images/qpuxC39V8E0D.jpg') }}">
     <meta property="og:image:alt" content="Akbar & Dwi Wedding Image">
     <title>Akbar & Dwi Wedding</title>
